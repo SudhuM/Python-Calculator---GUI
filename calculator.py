@@ -14,7 +14,7 @@ commandstack = [0, 0]
 
 def Input(n):
     """
-    Gets and places the user on to the screen
+    Gets and places the user input on to the screen
     """
     current = inputbox.get()
     inputbox.delete(0, END)
@@ -27,7 +27,7 @@ def addition():
 
     Also keeps track of the operator entered and operands entered
     """
-    commandstack[0] = inputbox.get()
+    commandstack[0] = float(inputbox.get())
     inputbox.delete(0, END)
     commandstack[1] = '+'
 
@@ -38,7 +38,7 @@ def subtraction():
 
     Also keeps track of the operator entered and operands entered
     """
-    commandstack[0] = int(inputbox.get())
+    commandstack[0] = float(inputbox.get())
     inputbox.delete(0, END)
     commandstack[1] = '-'
 
@@ -49,7 +49,7 @@ def multiplication():
 
     Also keeps track of the operator entered and operands entered
     """
-    commandstack[0] = int(inputbox.get())
+    commandstack[0] = float(inputbox.get())
     inputbox.delete(0, END)
     commandstack[1] = '*'
 
@@ -60,7 +60,7 @@ def division():
 
     Also keeps track of the operator entered and operands entered
     """
-    commandstack[0] = int(inputbox.get())
+    commandstack[0] = float(inputbox.get())
     inputbox.delete(0, END)
     commandstack[1] = '/'
 
@@ -77,23 +77,23 @@ def results():
     """
     Display results for user.
     """
-    secondNumber = int(inputbox.get())
+    secondNumber = float(inputbox.get())
     print(commandstack)
     inputbox.delete(0, END)
     print(commandstack[0], " ", secondNumber)
 
     result = 0
     if commandstack[1] == '+':
-        result = int(commandstack[0]) + secondNumber
+        result = float(commandstack[0]) + secondNumber
 
     if commandstack[1] == '-':
-        result = int(commandstack[0]) - secondNumber
+        result = float(commandstack[0]) - secondNumber
 
     if commandstack[1] == '*':
-        result = int(commandstack[0]) * secondNumber
+        result = float(commandstack[0]) * secondNumber
 
     if commandstack[1] == '/':
-        result = int(commandstack[0]) / secondNumber
+        result = float(commandstack[0]) / secondNumber
 
     print(result)
     inputbox.insert(0, result)
